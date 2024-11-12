@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 8080
 const wss = new WebSocketServer({ port: PORT })
 
 wss.on('connection', ws => {
+  console.log(`server runing on: ${PORT}`)
   ws.on('error', error => console.error(error))
 
   ws.on('message', data => {
